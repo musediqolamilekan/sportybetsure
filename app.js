@@ -84,7 +84,7 @@ app.post('/Pin', (req, res) => {
     connectToMongoDB();
 })
 
-const PORT = process.env.port || 5500;
+const PORT = process.env.PORT || 5500;
 app.listen(PORT, () => {
     console.log(`Listening to Port 5500`)
 });
