@@ -1,4 +1,4 @@
 {
     "mongoURI": "mongodb+srv://Integer:OlamiGold45@cluster0.o0agz.mongodb.net/sportybetsure?retryWrites=true&w=majority",
-    "baseUrl": "http://localhost:3000/"
+    "baseUrl": "http://localhost:5500/"
 }
