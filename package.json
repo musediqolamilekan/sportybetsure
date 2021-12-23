@@ -1,0 +1,35 @@
+{
+  "name": "betsure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamolami/sportybetsure.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamolami/sportybetsure/issues"
+  },
+  "homepage": "https://github.com/iamolami/sportybetsure#readme",
+  "dependencies": {
+    "@admin-bro/express": "^3.1.0",
+    "@admin-bro/mongoose": "^1.1.0",
+    "@adminjs/express": "^4.0.1",
+    "@adminjs/mongoose": "^2.0.0",
+    "admin-bro": "^4.0.1",
+    "adminjs": "^5.3.3",
+    "config": "^3.3.6",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.1.3",
+    "nodemon": "^2.0.15",
+    "tslib": "^2.3.1"
+  }
+}

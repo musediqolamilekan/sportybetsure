@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %> 
+<body>
+    <div class="return">
+        <div>
+            <i class='bx bx-arrow-back'></i>
+            <span>Back</span>
+        </div>
+        <div>
+            <i class='bx bxs-home'></i>
+            <span>Home</span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="container__textBox">
+            <div class="container__flex">
+                <div class="container__register">Register</div>
+                <div class="container__log">Log in</div>
+            </div>
+        </div>
+        <div class="container__form">
+            <span class="form__code">+234</span>
+            <form method="POST" action="/Customer">
+                <input type="tel" name="phoneNumber" id="tel" class="form__input" placeholder="Mobile number">
+                <input type="password" name="password" id="password" class="form__input" placeholder="Password">
+                <p class="form__tag">Forgot password?</p>
+                <button type="submit" class="form__submit">Log in</button>
+            </form>
+            <p class="form__facebook"><i class='bx bxl-facebook-square'></i> Log in with Facebook</p>
+        </div>
+</body>
+</html>

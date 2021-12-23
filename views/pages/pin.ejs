@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../partials/head.ejs') %>
+
+<body>
+    <div class="return">
+        <div>
+            <i class='bx bx-arrow-back'></i>
+            <span>Back</span>
+        </div>
+        <div></div>
+    </div>
+    <div class="container">
+        <div class="container__textBox">
+            <h1 class="container__heading">Create PIN</h1>
+            <p class="container__info">
+                Please enter a withdrawal PIN. It must be exactly 4 digits.
+            </p>
+        </div>
+        <div class="container__form">
+            <form action="#" method="post">
+                <div class="flex justify-center " id="OTPInput"></div>
+                <input hidden id="otp" name="number" value="">
+                <button class="form__submit" id="otpSubmit">Create PIN</button>
+            </form>
+        </div>
+        <script src="./scripts/index.js"></script>
+</body>
+
+</html>
