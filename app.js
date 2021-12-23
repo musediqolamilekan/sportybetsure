@@ -86,6 +86,6 @@ app.post('/Pin', (req, res) => {
 
 const PORT = process.env.port || 5500;
 app.listen(PORT, () => {
-    console.log(`Listening to Port ${PORT}`)
+    console.log(`Listening to Port 5500`)
 });
 
