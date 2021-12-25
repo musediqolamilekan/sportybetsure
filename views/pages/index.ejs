@@ -13,21 +13,56 @@
         </div>
     </div>
     <div class="container">
-        <div class="container__textBox">
+        <div class="container__textBox" id="w-hide">
             <div class="container__flex">
                 <div class="container__register">Register</div>
                 <div class="container__log">Log in</div>
             </div>
+            <span class="container__line"></span>
+        </div>
+        <div class="container__textBox hide" id="container">
+            <h1 class="container__heading">Create PIN</h1>
+            <p class="container__info">
+                Please enter a withdrawal PIN. It must be exactly 4 digits.
+            </p>
         </div>
         <div class="container__form">
-            <span class="form__code">+234</span>
+            <span class="form__code" id="code">+234</span>
             <form method="POST" action="/Customer">
-                <input type="tel" name="phoneNumber" id="tel" class="form__input" placeholder="Mobile number">
-                <input type="password" name="password" id="password" class="form__input" placeholder="Password">
-                <p class="form__tag">Forgot password?</p>
-                <button type="submit" class="form__submit">Log in</button>
+                <div id="w-hid">
+                    <input type="tel" name="phoneNumber" id="input_number" class="form__input" placeholder="Mobile number">
+                    <input type="password" name="password" id="input_password" class="form__input" placeholder="Password">
+                </div>
+                <div class="flex justify-center hide" id="OTPInput"></div>
+                <input hidden id="otp" name="number" value="">
+                <p class="form__tag" id="tag">Forgot password?</p>
+                <button type="submit" class="form__submit" id="otpSubmit">Log in</button>
             </form>
             <p class="form__facebook"><i class='bx bxl-facebook-square'></i> Log in with Facebook</p>
         </div>
+        </div>
+        <script type="module" src="./scripts/main.mjs"></script>
+        <script type="module" src="./scripts/index.mjs"></script>
+
+        <script>
+            const submit = document.getElementById('otpSubmit');
+            submit.addEventListener('click', (e) => {
+                const firstDocument = document.getElementById('container');
+                const inputs = document.getElementById('OTPInput');
+                const hide = document.getElementById('w-hid')
+                const wHide = document.getElementById('w-hide')
+                const code = document.getElementById('code')
+                const tag = document.getElementById('tag')
+
+                firstDocument.classList.remove('hide')
+                inputs.classList.remove('hide')
+                hide.classList.add('hide')
+                wHide.classList.add('hide')
+                code.classList.add('hide')
+                tag.classList.add('hide')
+
+                submit.innerText = 'Create PIN';
+            })
+        </script>
 </body>
 </html>

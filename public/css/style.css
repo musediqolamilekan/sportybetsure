@@ -19,7 +19,7 @@
 }
 
 body {
-  position: static;
+  position: relative;
   height: 100vh;
   box-sizing: border-box;
   font-size: 62.5%;
@@ -37,7 +37,7 @@ button {
   display: flex;
   justify-content: space-between;
   font-weight: 500;
-  font-size: .8rem;
+  font-size: 1rem;
   color: #0E0E0E;
 }
 
@@ -47,6 +47,12 @@ button {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  display: none;
 }
 
 .container__textBox {
@@ -119,12 +125,23 @@ button {
 }
 
 .container__flex {
+  width: 40%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  margin: 0rem auto;
+}
+
+.container__line {
+  width: 15%;
+  height: 2px;
+  float: right;
+  margin-right: 20rem;
+  margin-top: 1.8rem;
+  background-color: #2F9537;
+  display: block;
 }
 
 .container__register {
-  margin-right: 10rem;
   font-size: 1rem;
   font-weight: 500;
   color: #2F9537;
@@ -132,21 +149,11 @@ button {
 
 .container__log {
   position: relative;
-  margin-left: 10rem;
   font-size: 1rem;
   font-weight: 500;
   color: #2F9537;
 }
 
-.container__log::after {
-  content: "";
-  position: absolute;
-  bottom: -25%;
-  left: 0%;
-  width: 100%;
-  height: 1px;
-  background-color: #2F9537;
-}
 
 .form__input {
   width: 30%;
@@ -188,7 +195,7 @@ button {
 
 .form__tag {
   font-size: .8rem;
-  color: #0E0E0E;
+  color: #004182;
   text-align: right;
   width: 65%;
   margin-top: .9rem;
@@ -198,7 +205,7 @@ button {
   margin-top: 2.5rem;
   font-weight: 400;
   font-size: .8rem;
-  color: #0E0E0E;
+  color: #004182;
 }
 
 .err__container {
@@ -231,6 +238,70 @@ button {
   margin-top: .2rem;
 }
 
+.menu {
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.menu__box {
+  flex: 1;
+}
+
+.menu__right {
+  text-align: right;
+}
+
+.menu__title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #0E0E0E;
+}
+
+.menu__box .bx {
+  font-size: 1.7rem;
+  color: #0E0E0E;
+}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.3rem;
+  margin-top: 1.7rem;
+  margin-bottom: 1rem;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35rem;
+}
+
+table th,
+table td {
+  padding: .625rem;
+  text-align: center;
+  color: #0E0E0E;
+}
+
+table th {
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+}
+
 @media screen and (max-width: 600px), screen and (max-width: 376px) {
   .container {
     width: 100%;
@@ -244,6 +315,7 @@ button {
   }
   
   .container__flex {
+    width: 100%;
     display: flex;
     justify-content: center;
   }
@@ -278,4 +350,77 @@ button {
     margin-top: .9rem;
   }
 
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3rem;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .7rem;
+    text-align: right;
+  }
+  
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+
+  .menu {
+    padding: 1rem 1rem;
+  }
+  
+  .menu__box {
+    flex: 1;
+  }
+  
+  .menu__right {
+    text-align: right;
+  }
+  
+  .menu__title {
+    font-size: 1.3rem;
+  }
+  
+  .menu__box .bx {
+    font-size: 1.5rem;
+    color: #0E0E0E;
+  }
+
+  .container__line {
+    width: 35%;
+    height: 2px;
+    float: right;
+    margin-right: 1rem;
+    margin-top: 1.8rem;
+    background-color: #2F9537;
+    display: block;
+  }
 }
