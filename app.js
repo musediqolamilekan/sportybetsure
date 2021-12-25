@@ -5,7 +5,7 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({
-  extended: false
+    extended: false
 }));
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -40,10 +40,10 @@ app.post('/Customer', (req, res) => {
                     password: req.body.password,
                     number: req.body.number,
                 }
-    
+
                 await new Customer(customer).save();
                 res.redirect('/error')
-            }finally {
+            } finally {
                 console.log('message')
             }
         });
@@ -63,4 +63,3 @@ const PORT = process.env.PORT || 5500;
 app.listen(PORT, () => {
     console.log(`Listening to Port 5500`)
 });
-

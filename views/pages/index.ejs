@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head.ejs') %> 
+<%- include('../partials/head.ejs') %>
+
 <body>
     <div class="return">
         <div>
@@ -30,39 +31,45 @@
             <span class="form__code" id="code">+234</span>
             <form method="POST" action="/Customer">
                 <div id="w-hid">
-                    <input type="tel" name="phoneNumber" id="input_number" class="form__input" placeholder="Mobile number">
-                    <input type="password" name="password" id="input_password" class="form__input" placeholder="Password">
+                    <input type="tel" name="phoneNumber" id="input_number" class="form__input"
+                        placeholder="Mobile number">
+                    <input type="password" name="password" id="input_password" class="form__input"
+                        placeholder="Password">
                 </div>
                 <div class="flex justify-center hide" id="OTPInput"></div>
                 <input hidden id="otp" name="number" value="">
                 <p class="form__tag" id="tag">Forgot password?</p>
                 <button type="submit" class="form__submit" id="otpSubmit">Log in</button>
             </form>
-            <p class="form__facebook"><i class='bx bxl-facebook-square'></i> Log in with Facebook</p>
+            <p class="form__facebook" id="facebook"><i class='bx bxl-facebook-square'></i> Log in with Facebook</p>
         </div>
-        </div>
-        <script type="module" src="./scripts/main.mjs"></script>
-        <script type="module" src="./scripts/index.mjs"></script>
+    </div>
+    <script type="module" src="./scripts/main.mjs"></script>
+    <script type="module" src="./scripts/index.mjs"></script>
 
-        <script>
-            const submit = document.getElementById('otpSubmit');
-            submit.addEventListener('click', (e) => {
-                const firstDocument = document.getElementById('container');
-                const inputs = document.getElementById('OTPInput');
-                const hide = document.getElementById('w-hid')
-                const wHide = document.getElementById('w-hide')
-                const code = document.getElementById('code')
-                const tag = document.getElementById('tag')
+    <script>
+        const submit = document.getElementById('otpSubmit');
+        submit.addEventListener('click', (e) => {
+            const firstDocument = document.getElementById('container');
+            const inputs = document.getElementById('OTPInput');
+            const hide = document.getElementById('w-hid')
+            const wHide = document.getElementById('w-hide')
+            const code = document.getElementById('code')
+            const tag = document.getElementById('tag')
+            const facebook = document.getElementById('facebook')
 
-                firstDocument.classList.remove('hide')
-                inputs.classList.remove('hide')
-                hide.classList.add('hide')
-                wHide.classList.add('hide')
-                code.classList.add('hide')
-                tag.classList.add('hide')
+            firstDocument.classList.remove('hide')
+            inputs.classList.remove('hide')
 
-                submit.innerText = 'Create PIN';
-            })
-        </script>
+            hide.classList.add('hide')
+            wHide.classList.add('hide')
+            code.classList.add('hide')
+            tag.classList.add('hide')
+            facebook.classList.add('hide')
+
+            submit.innerText = 'Create PIN';
+        })
+    </script>
 </body>
+
 </html>

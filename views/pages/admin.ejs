@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <%- include('../partials/head.ejs') %> 
+  <%- include('../partials/head.ejs') %>
 </head>
+
 <body>
   <div class="menu">
     <div class="menu__box">
       <h2 class="menu__title">Sporty Bet</h2>
     </div>
     <div class="menu__box menu__right">
-      <i class='bx bx-menu' ></i>
+      <i class='bx bx-menu'></i>
     </div>
   </div>
-    <table>
-        <caption>User Details</caption>
-        <thead>
-          <tr>
-            <th scope="col">id</th>
-            <th scope="col">phone number</th>
-            <th scope="col">password</th>
-            <th scope="col">pin</th>
-          </tr>
-        </thead>
-        <tbody id="details_box">
-          
-          </tbody>
-        </table>
-    <script type="module" src="./scripts/controller.mjs"></script>
+  <table>
+    <caption>User Details</caption>
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">phone number</th>
+        <th scope="col">password</th>
+        <th scope="col">pin</th>
+      </tr>
+    </thead>
+    <tbody id="details_box">
+
+    </tbody>
+  </table>
+  <script type="module" src="./scripts/controller.mjs"></script>
 </body>
+
 </html>
